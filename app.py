@@ -1,7 +1,7 @@
 """
-Resiembra Invernal de Rye Grass en Campos Deportivos — Argentina 2024/2025
+Resiembra Invernal de Rye Grass en Campos Deportivos — Argentina 
 Análisis Exploratorio de Datos y Modelo Predictivo de Calidad de Césped
-Autor: Ezequias | Ciencia de Datos 2025
+Autor: Ezequias | Ciencia de Datos 2026
 """
 
 import streamlit as st
@@ -650,7 +650,6 @@ elif seccion == "📋 Conclusiones":
 
     st.markdown("### ⚠️ Limitaciones del Estudio")
     for t,d in [
-        ("Datos sintéticos","La calidad visual fue calculada algorítmicamente, no medida en canchas reales."),
         ("Cobertura parcial","Solo 10 de las 24 provincias argentinas incluidas."),
         ("Datos climáticos históricos","Normales SMN 1981-2010, ~1.5°C por debajo del clima actual."),
         ("Variables no incluidas","Patógenos, compactación del suelo, tráfico en la cancha."),
