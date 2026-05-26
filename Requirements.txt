@@ -1,5 +1,4 @@
-streamlit
 pandas
 numpy
-plotly
 scikit-learn
+plotly==5.18.0
