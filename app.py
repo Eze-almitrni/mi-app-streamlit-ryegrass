@@ -158,7 +158,7 @@ if seccion == "Inicio":
     st.markdown("""
     <div class='hero-box'>
         <h1>Resiembra Invernal de Rye Grass</h1>
-        <p>Análisis Exploratorio y Modelo Predictivo de Calidad de Césped · Argentina 2024/2025</p>
+        <p>Análisis Exploratorio y Modelo Predictivo de Calidad de Césped · Argentina </p>
     </div>""", unsafe_allow_html=True)
 
     c1, c2, c3, c4 = st.columns(4)
