@@ -1,7 +1,7 @@
 """
-Resiembra Invernal de Rye Grass en Campos Deportivos — Argentina 
+Resiembra Invernal de Rye Grass en Campos Deportivos — Argentina 2024/2025
 Análisis Exploratorio de Datos y Modelo Predictivo de Calidad de Césped
-Autor: Ezequias | Ciencia de Datos 2026
+Autor: Ezequias | Ciencia de Datos 2025
 Profesor: Gonzalo Ducca
 """
 
@@ -27,8 +27,8 @@ warnings.filterwarnings("ignore")
 # CONFIG GENERAL
 # ─────────────────────────────────────────────
 st.set_page_config(
-    page_title="Rye Grass Argentina",
-    page_icon="",
+    page_title="Rye Grass Argentina 🌱",
+    page_icon="🌿",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -137,11 +137,11 @@ def color_cat(cat):
 # SIDEBAR
 # ─────────────────────────────────────────────
 with st.sidebar:
-    st.markdown("## Rye Grass AR")
+    st.markdown("## 🌿 Rye Grass AR")
     st.markdown("---")
     seccion = st.radio("Navegación", [
-        "Inicio", "EDA — Exploración",
-        "Modelo ML", "Predictor", "📋 Conclusiones",
+        "🏠 Inicio", "🔍 EDA — Exploración",
+        "🤖 Modelo ML", "🎯 Predictor", "📋 Conclusiones",
     ])
     st.markdown("---")
     st.markdown("**Dataset**")
@@ -159,7 +159,7 @@ if seccion == "🏠 Inicio":
     st.markdown("""
     <div class='hero-box'>
         <h1>🌱 Resiembra Invernal de Rye Grass</h1>
-        <p>Análisis Exploratorio y Modelo Predictivo de Calidad de Césped · Argentina </p>
+        <p>Análisis Exploratorio y Modelo Predictivo de Calidad de Césped · Argentina 2024/2025</p>
     </div>""", unsafe_allow_html=True)
 
     c1, c2, c3, c4 = st.columns(4)
@@ -180,7 +180,7 @@ if seccion == "🏠 Inicio":
         entra en dormición vegetativa y pierde cobertura.
 
         Para mantener las condiciones de juego, los campos deportivos realizan una
-        **resiembra invernal con Rye Grass** (*Lolium spp y Lolium multiflorum*).
+        **resiembra invernal con Rye Grass** (*Lolium spp.*).
 
         Este proyecto analiza los **factores agronómicos y climáticos** que determinan
         la calidad de esa resiembra usando técnicas de EDA y aprendizaje automático.
@@ -199,7 +199,7 @@ if seccion == "🏠 Inicio":
             "Analizar el mes óptimo de siembra por región",
             "Construir modelo ML (Alta/Media/Baja)",
             "Generar recomendaciones por región",
-        ]: st.markdown(f"{o}")
+        ]: st.markdown(f"✅ {o}")
 
     st.markdown("<p class='section-title'>Recomendaciones por Región</p>", unsafe_allow_html=True)
     st.dataframe(pd.DataFrame({
@@ -217,8 +217,8 @@ if seccion == "🏠 Inicio":
 elif seccion == "🔍 EDA — Exploración":
     st.markdown("<h2 class='section-title'>Análisis Exploratorio de Datos</h2>", unsafe_allow_html=True)
     tab1,tab2,tab3,tab4,tab5,tab6 = st.tabs([
-        "Distribución","🌿 Variedades","Provincias",
-        "Clima","🧪 Suelo & Fertilizante","🔗 Correlaciones"])
+        "📊 Distribución","🌿 Variedades","🗺️ Provincias",
+        "🌡️ Clima","🧪 Suelo & Fertilizante","🔗 Correlaciones"])
 
     with tab1:
         st.markdown("### Distribución de Calidad Visual (Escala NTEP 1-9)")
@@ -250,7 +250,7 @@ elif seccion == "🔍 EDA — Exploración":
             ax.spines['top'].set_visible(False); ax.spines['right'].set_visible(False)
             st.pyplot(fig); plt.close()
         st.markdown("""<div class='insight-box'>
-        <strong>Insight:</strong> El 90% de las observaciones tienen calidad "Alta" y el 10% "Media".
+        📌 <strong>Insight:</strong> El 90% de las observaciones tienen calidad "Alta" y el 10% "Media".
         No hay registros "Baja", indicando un dataset sesgado hacia condiciones favorables.
         </div>""", unsafe_allow_html=True)
 
@@ -670,5 +670,5 @@ elif seccion == "📋 Conclusiones":
     st.markdown("""
     <div style='text-align:center;color:#555;font-size:0.9rem;padding:1rem;'>
     🌱 <strong>Resiembra Invernal de Rye Grass — Argentina 2024/2025</strong><br>
-    Proyecto académico · Ciencia de Datos · <strong>Ezequias</strong> · 2026
+    Proyecto académico · Ciencia de Datos · <strong>Ezequias</strong> · 2025
     </div>""", unsafe_allow_html=True)
