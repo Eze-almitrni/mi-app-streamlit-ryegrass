@@ -1,8 +1,7 @@
 """
-Resiembra Invernal de Rye Grass en Campos Deportivos — Argentina 
+Resiembra Invernal de Rye Grass en Campos Deportivos — Argentina 2024/2025
 Análisis Exploratorio de Datos y Modelo Predictivo de Calidad de Césped
-Autor: Ezequias Almitrani |Materia: Ciencia de Datos 2026
-Profesor: Gonzalo Ducca
+Autor: Ezequias | Ciencia de Datos 2025
 """
 
 import streamlit as st
@@ -27,8 +26,8 @@ warnings.filterwarnings("ignore")
 # CONFIG GENERAL
 # ─────────────────────────────────────────────
 st.set_page_config(
-    page_title="Rye Grass Argentina ",
-    page_icon="",
+    page_title="Rye Grass Argentina 🌱",
+    page_icon="🌿",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -140,8 +139,8 @@ with st.sidebar:
     st.markdown("## 🌿 Rye Grass AR")
     st.markdown("---")
     seccion = st.radio("Navegación", [
-        "Inicio", "EDA — Exploración",
-        "Modelo ML", "Predictor", "Conclusiones",
+        "🏠 Inicio", "🔍 EDA — Exploración",
+        "🤖 Modelo ML", "🎯 Predictor", "📋 Conclusiones",
     ])
     st.markdown("---")
     st.markdown("**Dataset**")
@@ -155,11 +154,11 @@ with st.sidebar:
 # ═══════════════════════════════════════════════════════
 # INICIO
 # ═══════════════════════════════════════════════════════
-if seccion == "Inicio":
+if seccion == "🏠 Inicio":
     st.markdown("""
     <div class='hero-box'>
-        <h1>Resiembra Invernal de Rye Grass</h1>
-        <p>Análisis Exploratorio y Modelo Predictivo de Calidad de Césped · Argentina </p>
+        <h1>🌱 Resiembra Invernal de Rye Grass</h1>
+        <p>Análisis Exploratorio y Modelo Predictivo de Calidad de Césped · Argentina 2024/2025</p>
     </div>""", unsafe_allow_html=True)
 
     c1, c2, c3, c4 = st.columns(4)
@@ -180,13 +179,13 @@ if seccion == "Inicio":
         entra en dormición vegetativa y pierde cobertura.
 
         Para mantener las condiciones de juego, los campos deportivos realizan una
-        **resiembra invernal con Rye Grass** (*Lolium spp y Lolium multiflorum*).
+        **resiembra invernal con Rye Grass** (*Lolium spp.*).
 
         Este proyecto analiza los **factores agronómicos y climáticos** que determinan
         la calidad de esa resiembra usando técnicas de EDA y aprendizaje automático.
         """)
         st.markdown("""<div class='insight-box'>
-        <strong>Pregunta central:</strong> ¿En qué provincia argentina y bajo qué combinación
+        🎯 <strong>Pregunta central:</strong> ¿En qué provincia argentina y bajo qué combinación
         de condiciones se obtiene la mayor calidad de césped al realizar resiembra invernal con
         <em>Lolium perenne</em> y <em>Lolium multiflorum</em>?
         </div>""", unsafe_allow_html=True)
@@ -199,7 +198,7 @@ if seccion == "Inicio":
             "Analizar el mes óptimo de siembra por región",
             "Construir modelo ML (Alta/Media/Baja)",
             "Generar recomendaciones por región",
-        ]: st.markdown(f"{o}")
+        ]: st.markdown(f"✅ {o}")
 
     st.markdown("<p class='section-title'>Recomendaciones por Región</p>", unsafe_allow_html=True)
     st.dataframe(pd.DataFrame({
@@ -217,7 +216,7 @@ if seccion == "Inicio":
 elif seccion == "🔍 EDA — Exploración":
     st.markdown("<h2 class='section-title'>Análisis Exploratorio de Datos</h2>", unsafe_allow_html=True)
     tab1,tab2,tab3,tab4,tab5,tab6 = st.tabs([
-        "📊 Distribución","Variedades","🗺️ Provincias",
+        "📊 Distribución","🌿 Variedades","🗺️ Provincias",
         "🌡️ Clima","🧪 Suelo & Fertilizante","🔗 Correlaciones"])
 
     with tab1:
@@ -250,7 +249,7 @@ elif seccion == "🔍 EDA — Exploración":
             ax.spines['top'].set_visible(False); ax.spines['right'].set_visible(False)
             st.pyplot(fig); plt.close()
         st.markdown("""<div class='insight-box'>
-        <strong>Insight:</strong> El 90% de las observaciones tienen calidad "Alta" y el 10% "Media".
+        📌 <strong>Insight:</strong> El 90% de las observaciones tienen calidad "Alta" y el 10% "Media".
         No hay registros "Baja", indicando un dataset sesgado hacia condiciones favorables.
         </div>""", unsafe_allow_html=True)
 
@@ -369,7 +368,7 @@ elif seccion == "🔍 EDA — Exploración":
             ax.spines['top'].set_visible(False); ax.spines['right'].set_visible(False)
             st.pyplot(fig); plt.close()
         st.markdown("""<div class='insight-box'>
-        <strong>Insight:</strong> El rango óptimo para <em>L. perenne</em> es 10-18 °C.
+        📌 <strong>Insight:</strong> El rango óptimo para <em>L. perenne</em> es 10-18 °C.
         Para <em>L. multiflorum</em> es 8-20 °C, mostrando mayor adaptabilidad térmica.
         </div>""", unsafe_allow_html=True)
 
@@ -422,7 +421,7 @@ elif seccion == "🔍 EDA — Exploración":
             ax.spines['top'].set_visible(False); ax.spines['right'].set_visible(False)
             st.pyplot(fig); plt.close()
         st.markdown("""<div class='insight-box'>
-        <strong>Insight:</strong> NPK 15-15-15 es el fertilizante con mejores resultados en la mayoría
+        📌 <strong>Insight:</strong> NPK 15-15-15 es el fertilizante con mejores resultados en la mayoría
         de las zonas. El riego diario maximiza la calidad, especialmente en regiones áridas como Cuyo.
         </div>""", unsafe_allow_html=True)
 
@@ -448,10 +447,10 @@ elif seccion == "🔍 EDA — Exploración":
 # ═══════════════════════════════════════════════════════
 # MODELO ML
 # ═══════════════════════════════════════════════════════
-elif seccion == "Modelo ML":
+elif seccion == "🤖 Modelo ML":
     st.markdown("<h2 class='section-title'>Modelo de Machine Learning</h2>", unsafe_allow_html=True)
     tab1,tab2,tab3,tab4 = st.tabs([
-        "Metodología","Comparación Modelos","Random Forest","Evaluación"])
+        "📐 Metodología","📊 Comparación Modelos","🌲 Random Forest","🎯 Evaluación"])
 
     with tab1:
         col1,col2 = st.columns(2)
@@ -471,7 +470,7 @@ elif seccion == "Modelo ML":
 | Variable objetivo | Categoría (Alta/Media/Baja) |
 """)
         st.markdown("""<div class='insight-box'>
-        <strong>Codificación:</strong> Variables categóricas con <code>LabelEncoder</code>.
+        🔑 <strong>Codificación:</strong> Variables categóricas con <code>LabelEncoder</code>.
         La Regresión Logística usa un Pipeline con <code>StandardScaler</code>.
         </div>""", unsafe_allow_html=True)
 
@@ -514,7 +513,7 @@ elif seccion == "Modelo ML":
         plt.tight_layout(); st.pyplot(fig); plt.close()
         top3 = feat_imp.sort_values(ascending=False).head(3)
         st.markdown(f"""<div class='insight-box'>
-        <strong>Top 3 variables:</strong>
+        🏆 <strong>Top 3 variables:</strong>
         {", ".join([f"<strong>{v}</strong> ({s:.3f})" for v,s in top3.items()])}
         </div>""", unsafe_allow_html=True)
 
@@ -538,14 +537,14 @@ elif seccion == "Modelo ML":
         ax.set_title("Matriz de Confusión — RF", fontweight='bold', color=VERDE)
         fig.patch.set_facecolor("#f4f7f0"); st.pyplot(fig); plt.close()
         st.markdown("""<div class='warning-box'>
-        <strong>Limitación:</strong> El dataset presenta desbalance de clases (90% Alta, 10% Media,
+        ⚠️ <strong>Limitación:</strong> El dataset presenta desbalance de clases (90% Alta, 10% Media,
         0% Baja), lo que puede inflar el accuracy. Se recomienda SMOTE en producción.
         </div>""", unsafe_allow_html=True)
 
 # ═══════════════════════════════════════════════════════
 # PREDICTOR
 # ═══════════════════════════════════════════════════════
-elif seccion == "Predictor":
+elif seccion == "🎯 Predictor":
     st.markdown("<h2 class='section-title'>Predictor de Calidad de Césped</h2>", unsafe_allow_html=True)
     st.markdown("Completá las condiciones de tu resiembra y el modelo predice la calidad esperada.")
 
@@ -591,7 +590,7 @@ elif seccion == "Predictor":
         pred_label = le_y.inverse_transform([pred_enc])[0]
         confianza = max(proba)
 
-        emoji_map = {"Alta":"","Media":"","Baja":""}
+        emoji_map = {"Alta":"🏆","Media":"⚠️","Baja":"❌"}
         css_map = {"Alta":"pred-alta","Media":"pred-media","Baja":"pred-baja"}
         st.markdown(f"""
         <div class='{css_map[pred_label]}'>
@@ -629,7 +628,7 @@ elif seccion == "Predictor":
 elif seccion == "📋 Conclusiones":
     st.markdown("<h2 class='section-title'>Conclusiones y Recomendaciones</h2>", unsafe_allow_html=True)
 
-    st.markdown("### Hallazgos Principales")
+    st.markdown("### 🏆 Hallazgos Principales")
     for k,v in {
         "Variedad óptima": "L. perenne en zonas templadas; L. multiflorum en zonas cálidas (NOA)",
         "Temperatura óptima": "10-18 °C para Perenne; 8-20 °C para Anual",
@@ -649,15 +648,16 @@ elif seccion == "📋 Conclusiones":
                          "Monitorear hongos","Tolera calor; germina rápido","Anticipar heladas"],
     }), use_container_width=True, hide_index=True)
 
-    st.markdown("### Limitaciones del Estudio")
+    st.markdown("### ⚠️ Limitaciones del Estudio")
     for t,d in [
+        ("Datos sintéticos","La calidad visual fue calculada algorítmicamente, no medida en canchas reales."),
         ("Cobertura parcial","Solo 10 de las 24 provincias argentinas incluidas."),
         ("Datos climáticos históricos","Normales SMN 1981-2010, ~1.5°C por debajo del clima actual."),
         ("Variables no incluidas","Patógenos, compactación del suelo, tráfico en la cancha."),
         ("Desbalance de clases","90% Alta, 10% Media, 0% Baja — accuracy puede estar inflado."),
     ]: st.markdown(f"**{t}:** {d}")
 
-    st.markdown("### Fuentes")
+    st.markdown("### 📚 Fuentes")
     for k,v in {
         "Características agronómicas":"turfland.com.ar y picasso.com.ar",
         "Datos climáticos":"Servicio Meteorológico Nacional (SMN) — datos.gob.ar",
@@ -669,6 +669,6 @@ elif seccion == "📋 Conclusiones":
     st.markdown("---")
     st.markdown("""
     <div style='text-align:center;color:#555;font-size:0.9rem;padding:1rem;'>
-    🌱 <strong>Resiembra Invernal de Rye Grass — Argentina </strong><br>
-    Proyecto académico · Ciencia de Datos · <strong>Ezequias</strong> · 2026
+    🌱 <strong>Resiembra Invernal de Rye Grass — Argentina 2024/2025</strong><br>
+    Proyecto académico · Ciencia de Datos · <strong>Ezequias</strong> · 2025
     </div>""", unsafe_allow_html=True)
