@@ -1,7 +1,7 @@
 """
 Resiembra Invernal de Rye Grass en Campos Deportivos — Argentina 
 Análisis Exploratorio de Datos y Modelo Predictivo de Calidad de Césped
-Autor: Ezequias | Ciencia de Datos 2026
+Autor: Ezequias | Ciencia de Datos 2025
 Profesor: Gonzalo Ducca
 """
 
@@ -27,8 +27,8 @@ warnings.filterwarnings("ignore")
 # CONFIG GENERAL
 # ─────────────────────────────────────────────
 st.set_page_config(
-    page_title="Rye Grass Argentina ",
-    page_icon="",
+    page_title="Rye Grass Argentina 🌱",
+    page_icon="🌿",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -137,7 +137,7 @@ def color_cat(cat):
 # SIDEBAR
 # ─────────────────────────────────────────────
 with st.sidebar:
-    st.markdown("## 🌿 Rye Grass AR")
+    st.markdown("## Rye Grass AR")
     st.markdown("---")
     seccion = st.radio("Navegación", [
         "🏠 Inicio", "🔍 EDA — Exploración",
@@ -471,7 +471,7 @@ elif seccion == "🤖 Modelo ML":
 | Variable objetivo | Categoría (Alta/Media/Baja) |
 """)
         st.markdown("""<div class='insight-box'>
-        <strong>Codificación:</strong> Variables categóricas con <code>LabelEncoder</code>.
+        🔑 <strong>Codificación:</strong> Variables categóricas con <code>LabelEncoder</code>.
         La Regresión Logística usa un Pipeline con <code>StandardScaler</code>.
         </div>""", unsafe_allow_html=True)
 
@@ -514,7 +514,7 @@ elif seccion == "🤖 Modelo ML":
         plt.tight_layout(); st.pyplot(fig); plt.close()
         top3 = feat_imp.sort_values(ascending=False).head(3)
         st.markdown(f"""<div class='insight-box'>
-        <strong>Top 3 variables:</strong>
+        🏆 <strong>Top 3 variables:</strong>
         {", ".join([f"<strong>{v}</strong> ({s:.3f})" for v,s in top3.items()])}
         </div>""", unsafe_allow_html=True)
 
@@ -538,14 +538,14 @@ elif seccion == "🤖 Modelo ML":
         ax.set_title("Matriz de Confusión — RF", fontweight='bold', color=VERDE)
         fig.patch.set_facecolor("#f4f7f0"); st.pyplot(fig); plt.close()
         st.markdown("""<div class='warning-box'>
-        <strong>Limitación:</strong> El dataset presenta desbalance de clases (90% Alta, 10% Media,
+        ⚠️ <strong>Limitación:</strong> El dataset presenta desbalance de clases (90% Alta, 10% Media,
         0% Baja), lo que puede inflar el accuracy. Se recomienda SMOTE en producción.
         </div>""", unsafe_allow_html=True)
 
 # ═══════════════════════════════════════════════════════
 # PREDICTOR
 # ═══════════════════════════════════════════════════════
-elif seccion == "Predictor":
+elif seccion == "🎯 Predictor":
     st.markdown("<h2 class='section-title'>Predictor de Calidad de Césped</h2>", unsafe_allow_html=True)
     st.markdown("Completá las condiciones de tu resiembra y el modelo predice la calidad esperada.")
 
@@ -569,7 +569,7 @@ elif seccion == "Predictor":
             fertilizante= st.selectbox("Fertilizante", sorted(df["Fertilizante"].unique()))
             riego = st.selectbox("Frecuencia de Riego", sorted(df["Frecuencia_Riego"].unique()))
             densidad = st.slider("Densidad Siembra (kg/100m²)", 2.0, 8.0, 4.0, 0.5)
-        submitted = st.form_submit_button("Predecir Calidad", use_container_width=True)
+        submitted = st.form_submit_button("🌱 Predecir Calidad", use_container_width=True)
 
     if submitted:
         fert_map = {"NPK 15-15-15":(15,15,15),"NPK 20-10-10":(20,10,10),
@@ -672,3 +672,4 @@ elif seccion == "📋 Conclusiones":
     🌱 <strong>Resiembra Invernal de Rye Grass — Argentina 2024/2025</strong><br>
     Proyecto académico · Ciencia de Datos · <strong>Ezequias</strong> · 2025
     </div>""", unsafe_allow_html=True)
+
