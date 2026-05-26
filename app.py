@@ -1,7 +1,8 @@
 """
 Resiembra Invernal de Rye Grass en Campos Deportivos — Argentina 
 Análisis Exploratorio de Datos y Modelo Predictivo de Calidad de Césped
-Autor: Ezequias | Ciencia de Datos 2026
+Autor: Ezequias | Materia: Ciencia de Datos 2026 
+Profesor: Gonzalo Ducca
 """
 
 import streamlit as st
