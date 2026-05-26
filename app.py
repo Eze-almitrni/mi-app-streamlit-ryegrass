@@ -1,7 +1,7 @@
 """
 Resiembra Invernal de Rye Grass en Campos Deportivos — Argentina 
 Análisis Exploratorio de Datos y Modelo Predictivo de Calidad de Césped
-Autor: Ezequias | Materia: Ciencia de Datos 2026 
+Autor: Ezequias Almitrani |Materia: Ciencia de Datos 2026
 Profesor: Gonzalo Ducca
 """
 
@@ -27,8 +27,8 @@ warnings.filterwarnings("ignore")
 # CONFIG GENERAL
 # ─────────────────────────────────────────────
 st.set_page_config(
-    page_title="Rye Grass Argentina 🌱",
-    page_icon="🌿",
+    page_title="Rye Grass Argentina ",
+    page_icon="",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -137,7 +137,7 @@ def color_cat(cat):
 # SIDEBAR
 # ─────────────────────────────────────────────
 with st.sidebar:
-    st.markdown("## Rye Grass AR")
+    st.markdown("## 🌿 Rye Grass AR")
     st.markdown("---")
     seccion = st.radio("Navegación", [
         "Inicio", "EDA — Exploración",
@@ -180,7 +180,7 @@ if seccion == "Inicio":
         entra en dormición vegetativa y pierde cobertura.
 
         Para mantener las condiciones de juego, los campos deportivos realizan una
-        **resiembra invernal con Rye Grass** (*Lolium spp.*).
+        **resiembra invernal con Rye Grass** (*Lolium spp y Lolium multiflorum*).
 
         Este proyecto analiza los **factores agronómicos y climáticos** que determinan
         la calidad de esa resiembra usando técnicas de EDA y aprendizaje automático.
@@ -217,7 +217,7 @@ if seccion == "Inicio":
 elif seccion == "🔍 EDA — Exploración":
     st.markdown("<h2 class='section-title'>Análisis Exploratorio de Datos</h2>", unsafe_allow_html=True)
     tab1,tab2,tab3,tab4,tab5,tab6 = st.tabs([
-        "📊 Distribución","🌿 Variedades","🗺️ Provincias",
+        "📊 Distribución","Variedades","🗺️ Provincias",
         "🌡️ Clima","🧪 Suelo & Fertilizante","🔗 Correlaciones"])
 
     with tab1:
@@ -292,7 +292,7 @@ elif seccion == "🔍 EDA — Exploración":
         ax.spines['top'].set_visible(False); ax.spines['right'].set_visible(False)
         st.pyplot(fig); plt.close()
         st.markdown("""<div class='insight-box'>
-        <strong>Insight:</strong> <em>Lolium perenne</em> supera al Anual en zonas templadas.
+        📌 <strong>Insight:</strong> <em>Lolium perenne</em> supera al Anual en zonas templadas.
         En el NOA, el Rye Grass Anual es comparable o superior por su tolerancia al calor.
         </div>""", unsafe_allow_html=True)
 
@@ -451,7 +451,7 @@ elif seccion == "🔍 EDA — Exploración":
 elif seccion == "Modelo ML":
     st.markdown("<h2 class='section-title'>Modelo de Machine Learning</h2>", unsafe_allow_html=True)
     tab1,tab2,tab3,tab4 = st.tabs([
-        "📐 Metodología","Comparación Modelos","Random Forest","Evaluación"])
+        "Metodología","Comparación Modelos","Random Forest","Evaluación"])
 
     with tab1:
         col1,col2 = st.columns(2)
@@ -569,7 +569,7 @@ elif seccion == "Predictor":
             fertilizante= st.selectbox("Fertilizante", sorted(df["Fertilizante"].unique()))
             riego = st.selectbox("Frecuencia de Riego", sorted(df["Frecuencia_Riego"].unique()))
             densidad = st.slider("Densidad Siembra (kg/100m²)", 2.0, 8.0, 4.0, 0.5)
-        submitted = st.form_submit_button("Predecir Calidad", use_container_width=True)
+        submitted = st.form_submit_button("🌱 Predecir Calidad", use_container_width=True)
 
     if submitted:
         fert_map = {"NPK 15-15-15":(15,15,15),"NPK 20-10-10":(20,10,10),
@@ -669,6 +669,6 @@ elif seccion == "📋 Conclusiones":
     st.markdown("---")
     st.markdown("""
     <div style='text-align:center;color:#555;font-size:0.9rem;padding:1rem;'>
-    <strong>Resiembra Invernal de Rye Grass — Argentina 2024/2025</strong><br>
-    Proyecto académico · Ciencia de Datos · <strong>Ezequias</strong> · 2025
+    🌱 <strong>Resiembra Invernal de Rye Grass — Argentina </strong><br>
+    Proyecto académico · Ciencia de Datos · <strong>Ezequias</strong> · 2026
     </div>""", unsafe_allow_html=True)
