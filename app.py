@@ -127,7 +127,7 @@ if seccion == "Inicio":
 
     En Argentina, durante el invierno el cesped base de las canchas de futbol — generalmente **Bermuda** o **Kikuyo** —
     entra en dormicion y pierde su capacidad de cobertura. Para mantener las condiciones de juego durante toda la temporada,
-    los campos deportivos realizan una **resiembra invernal con Rye Grass** (*Lolium spp.*).
+    los campos deportivos realizan una **resiembra invernal con Rye Grass** (*Lolium spp.*) y (*Lolium multiflorum*)
 
     Este proyecto analiza los factores que determinan la calidad de esa resiembra y construye un modelo de
     Machine Learning capaz de predecir si el resultado sera de calidad **Alta**, **Media** o **Baja**.
