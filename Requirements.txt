@@ -1,4 +1,3 @@
 pandas
 numpy
 scikit-learn
-plotly==5.18.0
