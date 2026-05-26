@@ -25,12 +25,12 @@ st.set_page_config(
 st.markdown("""
 <style>
     .titulo-principal { font-size: 2rem; font-weight: 800; color: #1b4332; }
-    .subtitulo { font-size: 1rem; color: #555; margin-bottom: 1rem; }
-    .metrica-label { font-size: 0.85rem; color: #666; }
-    .resultado-alta { background:#d8f3dc; color:#1b4332; padding:18px; border-radius:10px; font-size:1.4rem; font-weight:700; text-align:center; }
-    .resultado-media { background:#fff3cd; color:#856404; padding:18px; border-radius:10px; font-size:1.4rem; font-weight:700; text-align:center; }
-    .resultado-baja { background:#f8d7da; color:#721c24; padding:18px; border-radius:10px; font-size:1.4rem; font-weight:700; text-align:center; }
-    .info-box { background:#e8f4f8; border-left:4px solid #2196F3; padding:12px 16px; border-radius:6px; margin:8px 0; }
+    .subtitulo        { font-size: 1rem; color: #555; margin-bottom: 1rem; }
+    .metrica-label    { font-size: 0.85rem; color: #666; }
+    .resultado-alta   { background:#d8f3dc; color:#1b4332; padding:18px; border-radius:10px; font-size:1.4rem; font-weight:700; text-align:center; }
+    .resultado-media  { background:#fff3cd; color:#856404; padding:18px; border-radius:10px; font-size:1.4rem; font-weight:700; text-align:center; }
+    .resultado-baja   { background:#f8d7da; color:#721c24; padding:18px; border-radius:10px; font-size:1.4rem; font-weight:700; text-align:center; }
+    .info-box         { background:#e8f4f8; border-left:4px solid #2196F3; padding:12px 16px; border-radius:6px; margin:8px 0; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -88,7 +88,7 @@ seccion = st.sidebar.radio(
     ["Inicio", "Analisis Exploratorio (EDA)", "Predictor de Calidad", "Recomendaciones por Region"]
 )
 st.sidebar.markdown("---")
-st.sidebar.markdown("**Proyecto:** Resiembra Invernal de Rye Grass \n**Autor:** Ezequias \n**Curso:** Ciencia de Datos 2025")
+st.sidebar.markdown("**Proyecto:** Resiembra Invernal de Rye Grass  \n**Autor:** Ezequias  \n**Curso:** Ciencia de Datos 2025")
 
 
 # ── Cargar datos ──────────────────────────────────────────────────────────────
@@ -403,20 +403,20 @@ elif seccion == "Predictor de Calidad":
         else pd.Series({'N_Fertilizante': 15, 'P_Fertilizante': 15, 'K_Fertilizante': 15})
 
         caso = pd.DataFrame([{
-            'Variedad_Comun' : variedad,
-            'Provincia' : provincia,
-            'Mes' : mes_num,
-            'Temperatura_C' : temp,
-            'Precipitacion_mm' : precip,
-            'Humedad_Pct' : humedad,
-            'Tipo_Suelo' : tipo_suelo,
-            'pH_Suelo' : ph,
-            'Fertilizante' : fertilizante,
-            'Frecuencia_Riego' : frecuencia_riego,
+            'Variedad_Comun'            : variedad,
+            'Provincia'                 : provincia,
+            'Mes'                       : mes_num,
+            'Temperatura_C'             : temp,
+            'Precipitacion_mm'          : precip,
+            'Humedad_Pct'               : humedad,
+            'Tipo_Suelo'                : tipo_suelo,
+            'pH_Suelo'                  : ph,
+            'Fertilizante'              : fertilizante,
+            'Frecuencia_Riego'          : frecuencia_riego,
             'Densidad_Siembra_kg_100m2' : densidad,
-            'N_Fertilizante' : npk.get('N_Fertilizante', 15),
-            'P_Fertilizante' : npk.get('P_Fertilizante', 15),
-            'K_Fertilizante' : npk.get('K_Fertilizante', 15),
+            'N_Fertilizante'            : npk.get('N_Fertilizante', 15),
+            'P_Fertilizante'            : npk.get('P_Fertilizante', 15),
+            'K_Fertilizante'            : npk.get('K_Fertilizante', 15),
         }])
 
         caso_ok = caso[[c for c in features_ok if c in caso.columns]]
@@ -428,12 +428,12 @@ elif seccion == "Predictor de Calidad":
                 except ValueError:
                     caso_ok[col] = 0
 
-        pred = modelo.predict(caso_ok)[0]
+        pred  = modelo.predict(caso_ok)[0]
         proba = modelo.predict_proba(caso_ok)[0]
         categoria = le_target.inverse_transform([pred])[0]
-        prob_max = proba.max()
+        prob_max  = proba.max()
         confianza = 'Alta' if prob_max >= 0.85 else 'Media' if prob_max >= 0.70 else 'Baja'
-        clases = le_target.classes_
+        clases    = le_target.classes_
 
         col_res1, col_res2 = st.columns([1, 2])
 
