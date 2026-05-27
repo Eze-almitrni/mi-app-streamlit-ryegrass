@@ -76,10 +76,10 @@ streamlit run app.py
 
 ## ⚠️ Limitaciones
 
-1. Datos sintéticos (calidad visual calculada, no medida en canchas reales)
-2. Cobertura de 10/24 provincias argentinas
-3. Datos climáticos históricos (SMN 1981-2010)
-4. Desbalance de clases: 90% Alta, 10% Media, 0% Baja
+
+1. Cobertura de 10/24 provincias argentinas
+2. Datos climáticos históricos (SMN 1981-2010)
+3. Desbalance de clases: 90% Alta, 10% Media, 0% Baja
 
 ## 📚 Fuentes
 
